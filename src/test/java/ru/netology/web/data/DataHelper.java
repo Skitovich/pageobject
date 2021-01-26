@@ -6,6 +6,10 @@ public class DataHelper {
     private DataHelper() {
     }
 
+    public static Cards getCardsInfo() {
+        return new Cards(10000,10000);
+    }
+
     public static AuthInfo getAuthInfo() {
         return new AuthInfo("vasya", "qwerty123");
     }
@@ -27,5 +31,11 @@ public class DataHelper {
     @Value
     public static class VerificationCode {
         private String code;
+    }
+
+    @Value
+    public static class Cards {
+        private int firstCard;
+        private int secondCard;
     }
 }
