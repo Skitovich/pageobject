@@ -17,30 +17,19 @@ public class MoneyTransferCardsPage {
         refillCards.should(Condition.visible);
     }
 
-    public DataHelper.Cards fillFirstCard (int sum) {
-        int firstCard = DataHelper.getCardsInfo().getFirstCard() + sum;
-        int secondCard = DataHelper.getCardsInfo().getSecondCard() - sum;
-       return new DataHelper.Cards(firstCard,secondCard);
-    }
 
-    public DataHelper.Cards fillSecondCard (int sum) {
-        int firstCard = DataHelper.getCardsInfo().getFirstCard() - sum;
-        int secondCard = DataHelper.getCardsInfo().getSecondCard() + sum;
-        return new DataHelper.Cards(firstCard,secondCard);
-    }
 
-    public void shouldTransferMoneySuccessfully(int sumOfTransfer) {
-        if (toCard.has(Condition.selectedText("0001"))) {
-            fromCard.setValue("5559 0000 0000 0002");
-            fillFirstCard(sumOfTransfer);
-        }
-        else {
-            fromCard.setValue("5559 0000 0000 0001");
-            fillSecondCard(sumOfTransfer);
-        }
+    public void fillFirstCard(int sumOfTransfer) {
+        fromCard.setValue("5559 0000 0000 0002");
         transferAmount.setValue(String.valueOf(sumOfTransfer));
+        DataHelper.getCardsInfo().addMoneyToFirstCard(sumOfTransfer);
         transferMoney.click();
     }
 
-
+    public void fillSecondCard (int sumOfTransfer) {
+        fromCard.setValue("5559 0000 0000 0001");
+        transferAmount.setValue(String.valueOf(sumOfTransfer));
+        DataHelper.getCardsInfo().addMoneyToSecondCard(sumOfTransfer);
+        transferMoney.click();
+    }
 }

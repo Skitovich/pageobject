@@ -7,7 +7,7 @@ public class DataHelper {
     }
 
     public static Cards getCardsInfo() {
-        return new Cards(10000,10000);
+        return new Cards();
     }
 
     public static AuthInfo getAuthInfo() {
@@ -33,9 +33,29 @@ public class DataHelper {
         private String code;
     }
 
-    @Value
+
     public static class Cards {
         private int firstCard;
         private int secondCard;
+
+        public void addMoneyToFirstCard (int sum){
+            this.firstCard = firstCard + sum;
+            this.secondCard = secondCard + sum;
+        }
+        public void addMoneyToSecondCard(int sum){
+            this.secondCard = secondCard + sum;
+            this.firstCard = firstCard - sum;
+        }
+
+        public int getFirstCardDeposit(){
+            return this.firstCard;
+        }
+
+        public int getSecondCardDeposit(){
+            return this.firstCard;
+        }
+
     }
+
+
 }
