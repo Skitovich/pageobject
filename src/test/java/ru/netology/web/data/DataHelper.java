@@ -38,24 +38,23 @@ public class DataHelper {
         private int firstCard;
         private int secondCard;
 
-        public void addMoneyToFirstCard (int sum){
+        public void addMoneyToFirstCard(int sum) {
             this.firstCard = firstCard + sum;
             this.secondCard = secondCard + sum;
         }
-        public void addMoneyToSecondCard(int sum){
+
+        public void addMoneyToSecondCard(int sum) {
             this.secondCard = secondCard + sum;
             this.firstCard = firstCard - sum;
         }
 
-        public int getFirstCardDeposit(){
+        public int getFirstCardDeposit() {
             return this.firstCard;
         }
 
-        public int getSecondCardDeposit(){
+        public int getSecondCardDeposit() {
             return this.firstCard;
         }
 
     }
-
-
 }

@@ -16,8 +16,8 @@ public class DashboardPage {
         heading.shouldBe(visible);
     }
 
-    public MoneyTransferCardsPage depositMoneyToCard (int enterLastDigitOfCard) {
-        if (enterLastDigitOfCard == 1) firstCardDeposit.click();
+    public MoneyTransferCardsPage depositMoneyToCard(int enterLastNumOfCard) {
+        if (enterLastNumOfCard == 1) firstCardDeposit.click();
         else secondCardDeposit.click();
         return new MoneyTransferCardsPage();
     }
