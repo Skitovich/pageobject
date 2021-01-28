@@ -16,7 +16,7 @@ class MoneyTransferTest {
 
     @BeforeAll
     static void setUp() {
-        Configuration.browser = "opera";
+        Configuration.browser = "firefox";
         Configuration.startMaximized = true;
     }
 
