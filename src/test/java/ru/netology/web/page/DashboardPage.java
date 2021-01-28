@@ -12,7 +12,7 @@ public class DashboardPage {
     private final SelenideElement fillSecondCardDeposit =
             element("div[data-test-id='0f3f5c2a-249e-4c3d-8287-09f7a039391d'] .button__text");
     private final SelenideElement fillFirstCardDeposit =
-            element ("div[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0'] .button__text");
+            element("div[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0'] .button__text");
     private final SelenideElement checkFirstCardDeposit =
             element("div[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0']");
     private final SelenideElement checkSecondCardDeposit =
@@ -30,8 +30,8 @@ public class DashboardPage {
         return new MoneyTransferCardsPage();
     }
 
-    public void cardBalanceCheck () {
-      checkFirstCardDeposit.shouldHave(text(String.valueOf(getCardsInfo().getFirstCardDeposit())));
+    public void cardBalanceCheck() {
+        checkFirstCardDeposit.shouldHave(text(String.valueOf(getCardsInfo().getFirstCardDeposit())));
         checkSecondCardDeposit.shouldHave(text(String.valueOf(getCardsInfo().getSecondCardDeposit())));
     }
 }

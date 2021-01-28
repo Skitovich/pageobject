@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.element;
 public class MoneyTransferCardsPage {
     private final SelenideElement transferAmount = element("input[maxlength='14']");
     private final SelenideElement fromCard = element("[placeholder='0000 0000 0000 0000']");
-//    private final SelenideElement toCard = element("input[disabled]");
     private final SelenideElement transferMoney = element("button.button_view_extra .button__text");
 
     public MoneyTransferCardsPage() {

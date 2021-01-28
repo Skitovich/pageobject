@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.LoginPageV1;
+
 import static com.codeborne.selenide.Selenide.open;
 
 
@@ -18,8 +19,9 @@ class MoneyTransferTest {
         Configuration.browser = "opera";
         Configuration.startMaximized = true;
     }
+
     @BeforeEach
-    void openSetUp () {
+    void openSetUp() {
         open("http://localhost:9999");
     }
 
